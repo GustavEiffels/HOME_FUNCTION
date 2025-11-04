@@ -1,0 +1,13 @@
+spring:
+  application:
+   name: email_sender
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:9999/home
+    username: stock_admin
+    password: sss1234
+  mail:
+    host: ezsmtp.bizmeka.com
+    port: 465
+    username: joohyun.lee@sobetec.com
+    password: sfdcQwer!234
