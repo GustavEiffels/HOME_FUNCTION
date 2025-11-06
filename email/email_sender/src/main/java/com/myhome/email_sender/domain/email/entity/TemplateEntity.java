@@ -1,4 +1,4 @@
-package com.myhome.email_sender.domain.member;
+package com.myhome.email_sender.domain.email.entity;
 
 import com.myhome.email_sender.common.entity.BaseEntity;
 import jakarta.persistence.*;
@@ -10,18 +10,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Getter
-@Table(
-        name = "Member",
-        uniqueConstraints = {
-                @UniqueConstraint(
-                        columnNames = {"email"}
-                )
-        }
-)
-public class MemberEntity extends BaseEntity {
+@Table(name = "Email_Template")
+public class TemplateEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    private String email;
+    @Lob
+    private String emailTemplate;
 }

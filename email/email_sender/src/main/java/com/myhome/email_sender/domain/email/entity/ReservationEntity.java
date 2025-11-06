@@ -1,6 +1,8 @@
 package com.myhome.email_sender.domain.email.entity;
 
+
 import com.myhome.email_sender.common.entity.BaseEntity;
+import com.myhome.email_sender.domain.email.EmailSenderEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,14 +14,13 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Getter
-@Table(name = "Email_Template")
-public class EmailTemplateEntity extends BaseEntity {
+@Table(name = "Email_Reservation")
+public class ReservationEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private Long memberId;
     private Long templateId;
     private LocalDateTime reservationTime;
-
+    private EmailSenderEnum.ReserveEmailStatus status;
 }

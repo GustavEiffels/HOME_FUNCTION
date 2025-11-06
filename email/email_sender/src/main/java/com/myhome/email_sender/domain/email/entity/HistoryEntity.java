@@ -1,6 +1,8 @@
-package com.myhome.email_sender.domain.member;
+package com.myhome.email_sender.domain.email.entity;
+
 
 import com.myhome.email_sender.common.entity.BaseEntity;
+import com.myhome.email_sender.domain.email.EmailSenderEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,18 +12,13 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Getter
-@Table(
-        name = "Member",
-        uniqueConstraints = {
-                @UniqueConstraint(
-                        columnNames = {"email"}
-                )
-        }
-)
-public class MemberEntity extends BaseEntity {
+@Table(name = "Email_History")
+public class HistoryEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String email;
+    private Long reservation_id;
+
+    private EmailSenderEnum.ReserveEmailStatus status;
 }
